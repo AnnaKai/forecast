@@ -1,0 +1,10 @@
+<h2>Forecast for <%= @address %></h2>
+
+<p>Current temperature: <%= @forecast[:temp] %>°F</p>
+<p>High: <%= @forecast[:temp_max] %>°F / Low: <%= @forecast[:temp_min] %>°F</p>
+
+<% if @cached %>
+  <p><strong>⚡ Data served from cache</strong></p>
+<% end %>
+
+<%= link_to 'Check another address', new_forecast_path %>
