@@ -1,0 +1,41 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails       # loads all Rails cops
+  - rubocop-rspec       # loads all RSpec cops
+
+AllCops:
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  Exclude:
+    - 'bin/**'
+    - 'db/**'
+    - 'config/environments/**'
+    - 'config/initializers/**'
+    - 'node_modules/**'
+    - 'tmp/**'
+    - 'vendor/**'
+  SuggestExtensions: false
+
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2
+
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: single_quotes
+
+Layout/LineLength:
+  Max: 120
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
